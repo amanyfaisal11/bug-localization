@@ -26,9 +26,7 @@ AspectJ).
     `preprocess.py` falls back to a regex-based Java function extractor.
 - **Hardware**: the paper's experiments ran on a single NVIDIA RTX 5090.
   `--device` defaults to `cuda` in `run_pipeline.py` / `finetune_contrastive.py`,
-  but `encoders.py` auto-falls back to CPU if CUDA is unavailable (Stage 4
-  contrastive fine-tuning of two encoders will be slow on CPU). No VRAM
-  minimum is hard-coded in the code.
+  but `encoders.py` auto-falls back to CPU if CUDA is unavailable .
 
 ## 2. Setup
 
@@ -43,7 +41,7 @@ pip install -r requirements.txt
 
 ## 3. Dataset layout
 
-`scripts/parse_dataset.py` expects, run from the repo root:
+`scripts/parse_dataset.py`  run from the repo root:
 
 ```
 dataset/AspectJ.xml
@@ -57,19 +55,6 @@ dataset/Tomcat.xml
 ```bash
 python scripts/parse_dataset.py
 ```
-
-This writes `<project>_bugs.json` (e.g. `eclipse_platform_ui_bugs.json`) into
-the current directory — the format expected by every `--bug_reports` argument
-below.
-
-`--source_files` (`file_utils.load_source_files_robust`) accepts a directory
-of `.java` files (walked recursively), a `.zip`/`.tar`/`.tar.gz` archive, or a
-`.pkl`/`.json` file containing a `{relative_path: file_contents}` mapping.
-Point it at wherever you've placed the project's source tree.
-
-Valid `--project` keys and their fixed fold counts
-(`fold_split.PROJECT_FOLD_COUNTS`): `eclipse_platform_ui` (12), `jdt` (12),
-`birt` (8), `swt` (8), `tomcat` (2), `aspectj` (2).
 
 Dataset download:
 https://figshare.com/articles/dataset/The_dataset_of_six_open_source_Java_projects/951967
