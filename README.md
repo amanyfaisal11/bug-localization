@@ -80,7 +80,7 @@ embedding caching → per-fold LTR training/scoring over the project's
 consecutive train/test fold pairs → averaged metrics.
 
 Individual stages also have standalone CLIs (`preprocess.py`, `fold_split.py`,
-`train_ltr.py`, and `evaluate.py` are library-only and have no `__main__`):
+`train_ltr.py`, and `evaluate.py`):
 
 ```bash
 python mine_hard_negatives.py --bug_reports <bugs.json> --source_files <src> \
