@@ -31,8 +31,8 @@ AspectJ).
 ## 2. Setup
 
 ```bash
-git clone https://github.com/amanyfaisal11/buglocalization.git
-cd buglocalization
+git clone https://github.com/amanyfaisal11/bug-localization.git
+cd bug-localization
 python -m venv venv
 venv\Scripts\activate        # Windows
 source venv/bin/activate     # macOS/Linux
