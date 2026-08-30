@@ -77,16 +77,5 @@ contrastive fine-tuning of UniXcoder and GraphCodeBERT → attention-based
 embedding caching → per-fold LTR training/scoring over the project's
 consecutive train/test fold pairs → averaged metrics.
 
-Individual stages also have standalone CLIs (`preprocess.py`, `fold_split.py`,
-`train_ltr.py`, and `evaluate.py`):
 
-```bash
-python mine_hard_negatives.py --bug_reports <bugs.json> --source_files <src> \
-  --output output/hard_negatives.json --top_k 200
-
-python extract_ir_features.py --bug_reports <bugs.json> --source_files <src> \
-  --hard_negatives output/hard_negatives.json --output output/ir_features.pkl
-
-python finetune_contrastive.py --bug_reports <bugs.json> --source_files <src> \
-  --output_dir output --device cuda --epochs 5 --batch_size 64
 ```
