@@ -78,4 +78,3 @@ embedding caching → per-fold LTR training/scoring over the project's
 consecutive train/test fold pairs → averaged metrics.
 
 
-```
