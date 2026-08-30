@@ -21,9 +21,7 @@ AspectJ).
 - **Python 3.8+** (3.10 recommended).
 - Dependencies (see `requirements.txt`): `torch`, `transformers`, `numpy`,
   `scipy`, `nltk`, `tree-sitter`, `tree-sitter-java`.
-  - `nltk` stopwords are auto-downloaded on first run (`preprocess.py`).
-  - `tree-sitter`/`tree-sitter-java` are optional — if unavailable,
-    `preprocess.py` falls back to a regex-based Java function extractor.
+
 - **Hardware**: the paper's experiments ran on a single NVIDIA RTX 5090.
   `--device` defaults to `cuda` in `run_pipeline.py` / `finetune_contrastive.py`,
   but `encoders.py` auto-falls back to CPU if CUDA is unavailable .
